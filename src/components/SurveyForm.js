@@ -131,6 +131,7 @@ export class SurveyForm extends Component {
     const surveyOptions = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
     return (
       <div className={surveyFormStyles.container} id="surveyform">
+        <h1 className={surveyFormStyles.notSupported}>Not Supported</h1>
         <div className={surveyFormStyles.surveyForm}>
           <button
             className={surveyFormStyles.closeButton}
