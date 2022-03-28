@@ -37,9 +37,26 @@ export class SurveyForm extends Component {
   };
 
   futureDate = () => {
-    let futureDate = new Date();
-    futureDate = futureDate.getDate() + 30;
-    return futureDate;
+    // let futureDate = dayjs().add(30, "day");
+    // console.log(futureDate);
+    // let day = futureDate.day();
+    // let date = futureDate.date();
+    // let month = futureDate.month();
+    // let year = futureDate.year();
+    // let hour = futureDate.hour();
+    // let minutes = futureDate.minute();
+    // let seconds = futureDate.second();
+    // // console.log(
+    // //   `${day.substring(0, 2)}, ${date} ${month.substring(
+    // //     0,
+    // //     2
+    // //   )} ${year} ${hour}:${minutes}:${seconds} GMT`
+    // // );
+
+    let date = new Date();
+    date.setDate(date.getDate() + 30);
+    let expires = "expires=" + date.toUTCString();
+    return expires;
   };
 
   handleChoice = (event) => {
@@ -74,7 +91,7 @@ export class SurveyForm extends Component {
     this.handleClose();
     document.cookie = `PromoterScore=${
       this.state.createdAt
-    }; expires=${this.futureDate()}`;
+    }; ${this.futureDate()}`;
   };
 
   convertToScore = (choice) => {
@@ -93,15 +110,16 @@ export class SurveyForm extends Component {
   };
 
   getCookie(name) {
-    var dc = document.cookie;
-    var prefix = name + "=";
-    var begin = dc.indexOf("; " + prefix);
+    let dc = document.cookie;
+    let prefix = name + "=";
+    let begin = dc.indexOf("; " + prefix);
+    let end;
     if (begin === -1) {
       begin = dc.indexOf(prefix);
       if (begin !== 0) return null;
     } else {
       begin += 2;
-      var end = document.cookie.indexOf(";", begin);
+      end = document.cookie.indexOf(";", begin);
       if (end === -1) {
         end = dc.length;
       }
