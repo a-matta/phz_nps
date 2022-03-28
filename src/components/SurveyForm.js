@@ -37,22 +37,6 @@ export class SurveyForm extends Component {
   };
 
   futureDate = () => {
-    // let futureDate = dayjs().add(30, "day");
-    // console.log(futureDate);
-    // let day = futureDate.day();
-    // let date = futureDate.date();
-    // let month = futureDate.month();
-    // let year = futureDate.year();
-    // let hour = futureDate.hour();
-    // let minutes = futureDate.minute();
-    // let seconds = futureDate.second();
-    // // console.log(
-    // //   `${day.substring(0, 2)}, ${date} ${month.substring(
-    // //     0,
-    // //     2
-    // //   )} ${year} ${hour}:${minutes}:${seconds} GMT`
-    // // );
-
     let date = new Date();
     date.setDate(date.getDate() + 30);
     let expires = "expires=" + date.toUTCString();
