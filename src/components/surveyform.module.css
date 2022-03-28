@@ -1,0 +1,143 @@
+html {
+  scroll-behavior: smooth;
+}
+.container {
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  bottom: 0;
+  width: 100vw;
+  opacity: 0;
+}
+
+.mainHeading {
+  font-size: 1.5rem;
+  color: coral;
+  padding: 20px;
+}
+
+.surveyForm {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: auto;
+  width: 100vw;
+  background-color: lightgray;
+  border-radius: 5px;
+}
+
+.closeButton {
+  position: absolute;
+  top: 0%;
+  right: 5%;
+  height: 30px;
+  width: 30px;
+  right: 0px;
+  border: none;
+}
+
+.closeStyle {
+  color: coral;
+}
+
+.fadeIn {
+  opacity: 1;
+}
+
+.gridContainer {
+  display: grid;
+  align-items: center;
+  justify-items: center;
+  width: 90%;
+  margin: 0 20px;
+  padding: 10px;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: 0.25fr;
+  gap: 1rem 1rem;
+  grid-template-areas: "1 2 3 4 5 6 7 8 9 10";
+}
+
+.number {
+  display: flex;
+  border: solid black 1px;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  height: 70px;
+  width: 70px;
+  padding: 10px;
+  text-align: center;
+  background-color: skyblue;
+  color: black;
+}
+
+.number:hover {
+  background-color: rgb(29, 164, 218);
+  border: solid coral 2px;
+}
+
+.formWrapper {
+  position: relative;
+  width: 80vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: auto;
+}
+
+.form {
+  display: none;
+  height: 20vh;
+  padding: 20px;
+}
+
+textarea {
+  font-family: inherit;
+  height: 15vh;
+  width: 80vw;
+  resize: none;
+  padding: 20px;
+}
+
+.submitButton {
+  background-color: coral;
+  border-radius: 5px;
+  color: white;
+  border: none;
+  width: 100px;
+  height: 2.5em;
+  margin: 10px 0;
+}
+
+.submitButton:hover {
+  background-color: rgb(237, 76, 17);
+}
+
+@media only screen and (max-width: 900px) {
+  .mainHeading {
+    font-size: 1rem;
+    color: coral;
+  }
+  .number {
+    max-height: 50px;
+    max-width: 50px;
+  }
+}
+
+@media only screen and (max-width: 685px) {
+  .surveyForm {
+    max-height: 70vh;
+  }
+
+  .gridContainer {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 0.25fr 0.25fr;
+    gap: 1em 1em;
+    grid-template-areas:
+      "1 2 3 4 5"
+      "6 7 8 9 10";
+  }
+}
