@@ -17,6 +17,8 @@ export class SurveyForm extends Component {
     browser: "",
     platform: "",
     createdAt: "",
+    hover: null,
+    ratingValue: null,
   };
 
   getData = async () => {
@@ -79,7 +81,8 @@ export class SurveyForm extends Component {
   };
 
   convertToScore = (choice) => {
-    let intChoice = parseInt(choice);
+    // let intChoice = parseInt(choice);
+    let intChoice = +choice;
     let result = "";
     if (intChoice > 0 && intChoice <= 6) {
       result = "detractor";

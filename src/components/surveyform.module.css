@@ -82,6 +82,12 @@ html {
   border: solid coral 2px;
 }
 
+.circle {
+  border-radius: 50%;
+  border: none;
+  background-color: lightgray;
+}
+
 .formWrapper {
   position: relative;
   width: 80vw;
