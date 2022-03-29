@@ -155,17 +155,16 @@ export default function SurveyFormFunctional(props) {
                   value={ratingValue}
                   onClick={handleChoice}
                 >
-                  <span className={surveyFormStyles.circleSpan}>
-                    {ratingValue}
-                    <FaCircle
-                      color={
-                        ratingValue <= (hover || rating) ? "#ed6930" : "skyblue"
-                      }
-                      size={70}
-                      onMouseEnter={() => setHover(ratingValue)}
-                      onMouseLeave={() => setHover(null)}
-                    />
-                  </span>
+                  <p>{ratingValue}</p>
+
+                  <FaCircle
+                    color={
+                      ratingValue <= (hover || rating) ? "#ed6930" : "skyblue"
+                    }
+                    size={70}
+                    onMouseEnter={() => setHover(ratingValue)}
+                    onMouseLeave={() => setHover(null)}
+                  />
                 </button>
               </div>
             );

@@ -54,8 +54,7 @@ html {
   display: grid;
   align-items: center;
   justify-items: center;
-  width: 90%;
-  margin: 0 20px 0 0;
+  margin: 0 20px 0 10px;
   padding: 10px;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
   grid-template-rows: 0.25fr;
@@ -83,9 +82,14 @@ html {
 }
 
 .circle {
+  display: flex;
+  flex-direction: column-reverse;
+  justify-content: center;
+  align-items: center;
   border-radius: 50%;
   border: none;
   background-color: lightgray;
+  padding: 0;
 }
 
 .formWrapper {
