@@ -138,10 +138,7 @@ export default function SurveyFormFunctional(props) {
             <AiOutlineClose />
           </span>
         </button>
-        <div className={surveyFormStyles.mainHeading}>
-          How likely are you to recommend {props.company} to a friend or
-          colleague?
-        </div>
+        <div className={surveyFormStyles.mainHeading}>{props.question}</div>
         <div className={surveyFormStyles.gridContainer}>
           {[...Array(10)].map((circle, i) => {
             const ratingValue = i + 1;
@@ -153,7 +150,7 @@ export default function SurveyFormFunctional(props) {
                   type="radio"
                   name="rating"
                   value={ratingValue}
-                  onClick={handleChoice}
+                  onClick={(event) => handleChoice(ratingValue)}
                 >
                   <p>{ratingValue}</p>
 
@@ -161,7 +158,7 @@ export default function SurveyFormFunctional(props) {
                     color={
                       ratingValue <= (hover || rating) ? "#ed6930" : "skyblue"
                     }
-                    size={70}
+                    size={50}
                     onMouseEnter={() => setHover(ratingValue)}
                     onMouseLeave={() => setHover(null)}
                   />

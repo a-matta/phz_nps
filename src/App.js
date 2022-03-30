@@ -6,7 +6,11 @@ import SurveyForm from "./components/SurveyFormFunctional";
 function App() {
   return (
     <div className="App">
-      <SurveyForm company={"PHZ"} />
+      <SurveyForm
+        question={
+          "How likely are you to recommend Team Glory to your friends and family?"
+        }
+      />
     </div>
   );
 }
