@@ -6,7 +6,7 @@ import surveyFormStyles from "./surveyform.module.css";
 
 // Icons
 import { AiOutlineClose } from "react-icons/ai";
-import { FaCircle } from "react-icons/fa";
+import { FaStar } from "react-icons/fa";
 
 export default function SurveyFormFunctional(props) {
   // Hooks
@@ -155,9 +155,9 @@ export default function SurveyFormFunctional(props) {
                 >
                   <p>{ratingValue}</p>
 
-                  <FaCircle
+                  <FaStar
                     color={
-                      ratingValue <= (hover || rating) ? "#ed6930" : "skyblue"
+                      ratingValue <= (hover || rating) ? "#ed6930" : "white"
                     }
                     size={50}
                     onMouseEnter={() => setHover(ratingValue)}

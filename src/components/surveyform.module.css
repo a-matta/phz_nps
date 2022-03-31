@@ -1,3 +1,15 @@
+:root {
+  --dark-background: rgba(136, 229, 251);
+  --main-background: radial-gradient(
+    circle,
+    rgb(109, 187, 205) 37%,
+    rgba(51, 84, 133, 1) 100%
+  );
+  --textColor: ;
+  --altTextColor: ;
+  --secondary-background: #ed6930;
+}
+
 html {
   scroll-behavior: smooth;
 }
@@ -16,7 +28,7 @@ html {
 
 .mainHeading {
   font-size: 1.5rem;
-  color: coral;
+  color: black;
   padding: 30px;
 }
 
@@ -28,7 +40,8 @@ html {
   align-items: center;
   min-height: auto;
   width: 100vw;
-  background-color: lightgray;
+  background: var(--dark-background);
+  background: var(--main-background);
   border-radius: 5px;
 }
 
@@ -42,7 +55,7 @@ html {
   right: 0px;
   border: none;
   margin: 10px 10px 0 0;
-  border-radius: 5px;
+  border-radius: 50%;
   background-color: skyblue;
 }
 
@@ -112,7 +125,7 @@ html {
   align-items: center;
   border-radius: 50%;
   border: none;
-  background-color: lightgray;
+  background-color: inherit;
   padding: 0;
 }
 
