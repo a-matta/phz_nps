@@ -34,7 +34,9 @@ body {
 h4 {
   font-size: 1.15rem;
   color: #333;
-  padding: 30px;
+  padding-right: 10px;
+  padding-left: 10px;
+  padding-top: 20px;
 }
 
 .surveyForm {
@@ -154,6 +156,8 @@ h4 {
 }
 
 .formWrapper {
+  height: 20vh;
+  padding: 20px;
   position: relative;
   width: 80vw;
   display: flex;
