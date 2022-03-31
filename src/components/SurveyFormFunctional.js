@@ -21,6 +21,7 @@ export default function SurveyFormFunctional(props) {
   const [rating, setRating] = useState(null);
   const [hover, setHover] = useState(null);
   const [allData, setAllData] = useState({});
+  const [notificationActive, setNotificationActive] = useState(false);
 
   // Functions
 
@@ -82,6 +83,12 @@ export default function SurveyFormFunctional(props) {
       createdAt: createdAt,
     });
     console.log("submit button working");
+    setNotificationActive(true);
+    setTimeout(() => {
+      let notificationDiv = document.getElementById("fadeOut");
+      notificationDiv.style.transition = "all 5s";
+      notificationDiv.style.opacity = 0;
+    }, 1000);
   };
 
   const convertToScore = (choice) => {
@@ -128,64 +135,82 @@ export default function SurveyFormFunctional(props) {
   }, [allData, hover, rating]);
 
   return (
-    <div className={surveyFormStyles.container} id="surveyform">
-      <h1 className={surveyFormStyles.notSupported}>Not Supported</h1>
-      <div className={surveyFormStyles.surveyForm}>
-        <button
-          className={surveyFormStyles.closeButton}
-          onClick={(event) => handleClose(event)}
-        >
-          <span className={surveyFormStyles.closeStyle}>
-            <AiOutlineClose className={surveyFormStyles.closeIcon} />
-          </span>
-        </button>
-        <div className={surveyFormStyles.mainHeading}>{props.question}</div>
-        <div className={surveyFormStyles.gridContainer}>
-          {[...Array(10)].map((circle, i) => {
-            const ratingValue = i + 1;
+    <>
+      <div className={surveyFormStyles.container} id="surveyform">
+        <h1 className={surveyFormStyles.notSupported}>Not Supported</h1>
+        <div className={surveyFormStyles.surveyForm}>
+          <button
+            className={surveyFormStyles.closeButton}
+            onClick={(event) => handleClose(event)}
+          >
+            <span className={surveyFormStyles.closeStyle}>
+              <AiOutlineClose className={surveyFormStyles.closeIcon} />
+            </span>
+          </button>
+          <h4>{props.question}</h4>
+          <div className={surveyFormStyles.gridContainer}>
+            {[...Array(10)].map((circle, i) => {
+              const ratingValue = i + 1;
 
-            return (
-              <div className="circle" key={ratingValue}>
-                <button
-                  className={surveyFormStyles.circle}
-                  type="radio"
-                  name="rating"
-                  value={ratingValue}
-                  onClick={(event) => handleChoice(ratingValue)}
-                >
-                  <p>{ratingValue}</p>
+              return (
+                <div className="circle" key={ratingValue}>
+                  <button
+                    className={surveyFormStyles.circle}
+                    type="radio"
+                    name="rating"
+                    value={ratingValue}
+                    onClick={(event) => handleChoice(ratingValue)}
+                  >
+                    <p className={surveyFormStyles.underNumber}>
+                      {ratingValue}
+                    </p>
 
-                  <FaStar
-                    color={
-                      ratingValue <= (hover || rating) ? "#ed6930" : "white"
-                    }
-                    size={50}
-                    onMouseEnter={() => setHover(ratingValue)}
-                    onMouseLeave={() => setHover(null)}
-                  />
-                </button>
-              </div>
-            );
-          })}
-        </div>
-        <div className={surveyFormStyles.formWrapper} id="formWrapper">
-          <form className={surveyFormStyles.form} id="message">
-            <textarea
-              name="message"
-              className={surveyFormStyles.message}
-              placeholder="Please add some feedback"
-              onChange={(event) => setMessage(event.target.value)}
-            ></textarea>
-            <button
-              className={surveyFormStyles.submitButton}
-              type="submit"
-              onClick={(event) => handleSubmit(event)}
-            >
-              Send
-            </button>
-          </form>
+                    <FaStar
+                      color={
+                        ratingValue <= (hover || rating) ? "#ed6930" : "white"
+                      }
+                      size={50}
+                      onMouseEnter={() => setHover(ratingValue)}
+                      onMouseLeave={() => setHover(null)}
+                    />
+                  </button>
+                </div>
+              );
+            })}
+          </div>
+          <div className={surveyFormStyles.tagContainer}>
+            <p>Not likely at all</p>
+            <p>Extremely likely</p>
+          </div>
+          <div className={surveyFormStyles.formWrapper} id="formWrapper">
+            <form className={surveyFormStyles.form} id="message">
+              <textarea
+                name="message"
+                className={surveyFormStyles.message}
+                placeholder="Please add some feedback"
+                onChange={(event) => setMessage(event.target.value)}
+              ></textarea>
+              <button
+                className={surveyFormStyles.submitButton}
+                type="submit"
+                onClick={(event) => handleSubmit(event)}
+              >
+                Send
+              </button>
+            </form>
+          </div>
         </div>
       </div>
-    </div>
+      {notificationActive && (
+        <div>
+          <p
+            className={`fadeOut ${surveyFormStyles.notification}`}
+            id="fadeOut"
+          >
+            Thank you for your feedback
+          </p>
+        </div>
+      )}
+    </>
   );
 }
