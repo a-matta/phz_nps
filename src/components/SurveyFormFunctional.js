@@ -22,8 +22,6 @@ export default function SurveyFormFunctional(props) {
   const [hover, setHover] = useState(null);
   const [allData, setAllData] = useState({});
 
-  const surveyOptions = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
-
   // Functions
 
   const getData = async () => {
@@ -43,6 +41,7 @@ export default function SurveyFormFunctional(props) {
     }
   };
 
+  // Setting date 30 days from now for cookie expiration
   const futureDate = () => {
     let date = new Date();
     date.setDate(date.getDate() + 30);
@@ -52,6 +51,7 @@ export default function SurveyFormFunctional(props) {
 
   const handleChoice = (option) => {
     setChoice(option);
+    setRating(option);
     convertToScore(choice);
     let formDiv = document.getElementById("message");
     formDiv.style.display = "block";
@@ -69,6 +69,7 @@ export default function SurveyFormFunctional(props) {
   const handleSubmit = (event) => {
     event.preventDefault();
     handleClose();
+    // creating cookie
     document.cookie = `PromoterScore=${createdAt}; ${futureDate()}`;
     setAllData({
       choice: choice,
@@ -95,7 +96,7 @@ export default function SurveyFormFunctional(props) {
     }
     setSurveyResult(result);
   };
-
+  // Checks for cookie existing on component loading
   const getCookie = (name) => {
     let dc = document.cookie;
     let prefix = name + "=";
@@ -135,7 +136,7 @@ export default function SurveyFormFunctional(props) {
           onClick={(event) => handleClose(event)}
         >
           <span className={surveyFormStyles.closeStyle}>
-            <AiOutlineClose />
+            <AiOutlineClose className={surveyFormStyles.closeIcon} />
           </span>
         </button>
         <div className={surveyFormStyles.mainHeading}>{props.question}</div>

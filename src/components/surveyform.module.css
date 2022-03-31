@@ -17,7 +17,7 @@ html {
 .mainHeading {
   font-size: 1.5rem;
   color: coral;
-  padding: 20px;
+  padding: 30px;
 }
 
 .surveyForm {
@@ -33,6 +33,7 @@ html {
 }
 
 .closeButton {
+  padding: 0;
   position: absolute;
   top: 0%;
   right: 5%;
@@ -40,10 +41,33 @@ html {
   width: 30px;
   right: 0px;
   border: none;
+  margin: 10px 10px 0 0;
+  border-radius: 5px;
+  background-color: skyblue;
+}
+
+.closeButton:hover {
+  background-color: coral;
 }
 
 .closeStyle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   color: coral;
+  width: 30px;
+  height: 30px;
+  padding: 0;
+  margin: 0;
+}
+
+.closeStyle:hover {
+  color: white;
+}
+
+.closeIcon {
+  height: 25px;
+  width: 25px;
 }
 
 .fadeIn {
@@ -94,11 +118,12 @@ html {
 
 .formWrapper {
   position: relative;
-  width: 80vw;
+  /* width: 80vw; */
   display: flex;
   justify-content: center;
   align-items: center;
   height: auto;
+  background-color: lightgray;
 }
 
 .form {
@@ -133,6 +158,7 @@ textarea {
   .mainHeading {
     font-size: 1rem;
     color: coral;
+    margin: 0 20px;
   }
   .number {
     max-height: 50px;
@@ -153,6 +179,9 @@ textarea {
     grid-template-areas:
       "1 2 3 4 5"
       "6 7 8 9 10";
+  }
+  textarea {
+    height: 2rem;
   }
 }
 @media only screen and (max-width: 319px) {
