@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 
+// Backend
+import { firebaseUpload } from "../backend/firebase-functions";
 // Styling
 import surveyFormStyles from "./surveyform.module.css";
 
@@ -131,8 +133,9 @@ export default function SurveyFormFunctional(props) {
       surveyFormDiv.style.transition = "all 1s";
       surveyFormDiv.style.opacity = 1;
     }, 1000);
-    console.log(allData, hover, rating);
-  }, [allData, hover, rating]);
+    console.log(allData);
+    firebaseUpload(allData);
+  }, [allData]);
 
   return (
     <>
