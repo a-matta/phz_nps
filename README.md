@@ -1,75 +1,168 @@
-# Getting Started with Create React App
+# Promoter's Call System
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Usage:
+git archive --format=tar HEAD | tar x -C ~/workspace/docker/project-name
 
-## Available Scripts
+## 1. Project Description
 
-In the project directory, you can run:
+[Net Promoter Score](https://en.wikipedia.org/wiki/Net_promoter_score) that is widely used metric that takes a form of single survey question asking customers to rate the likelihood that they would reccommend a company, product or service to a friend or colleague. It measures the loyalty of customers to a company. Scores are measured with a single question survey with number 1-10, a higher score is desirable.
 
-### `npm start`
+Promoter's Call System allows buisnesses to collect customer feedback and arrive at NPS scores.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### 1.1. Business Vision
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Promoter's Call System use their promoter score to measure 'customer satisfaction' & 'loyalty to a brand'. Its useful for organisations to see how customer service is percieved and where improvements might be made.
 
-### `npm test`
+### 1.2. Task Management
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### 1.3. Personas
 
-### `npm run build`
+### 1.4. Use Cases
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### 1.5. Non-Functional Requirements
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+https://wiki.phz.fi/NonFunctionalRequirements
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+The NPS Calculation Formula
 
-### `npm run eject`
+To calculate your Net Promoter Score, subtract the percentage of Detractors from the percentage of Promoters. NPS = % promoters - % detractors. It is that simple. So, if 50% of respondents were Promoters and 10% were Detractors, your Net Promoter is a score of 40.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## 2. Architecture
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### 2.1. Technologies
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+All PHZ Full Stack -projects should encapsulate all environments by virtualization. Choose one of the following for your project:
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+Dev
 
-## Learn More
+- React
+- CSS
+- Firebase
+- Vagrant/Virtualbox
+- Docker-compose/Docker
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+CI
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+- use dev -env on ci.in.phz.fi + Jenkins executors running Docker or Vagrant/Virtualbox.
+- Jenkins
+- (do not use Gitlab CI, or AWS Code Deploy or other CI unless you have a permission from management, can rationalize the exception to management and you know what you are doing)
+- Nothing should be run outside virtualization and everything should be wrapped inside the container/virtual machine
+- do not pin the projects down on any individual executor, but set up the builds so that they can be run on any executor machine
 
-### Code Splitting
+Staging
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+- Xen / PHZ Virtual Machines
+- PHZ Docker Swarm
+- PHZ Kubernetes
 
-### Analyzing the Bundle Size
+Production
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+- Xen / PHZ Virtual Machines + Baremetal Database db.in.phz.fi
+- PHZ Docker Swarm (internal projects only)
+- PHZ Kubernetes (internal projects only)
+- AWS (customer projects, but customer needs to pay for it and there needs to be a contract in place with the customer before you start to set up the AWS env)
 
-### Making a Progressive Web App
+### 2.2. Naming, Terms and Key Concepts
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+Environments and the configs should be named as
 
-### Advanced Configuration
+- dev: docker-compose.yml (i.e. use the default names for dev env), but .env.dev
+- (ci): use the dev -env on CI
+- stg: docker-compose.stg.yml, .env.stg
+- prod: docker-compose.prod.yml, .env.prod
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+### 2.3. Coding Convention
 
-### Deployment
+Directory structure
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+- doc/ for UML documents
+- etc/ for nginx, ssh etc configs. Can be cp -pr etc/ /etc to the virtual machine during provisioning and matches the os directory structure
+- results/ test results
+- reports/ for e.g. code coverage reports
+- src/ for source code
+  \*\* Note! Source code should be placed under a single folder (src) that can be mounted over Docker -volume or Vagrant -shared folder inside the virtual machine so that node_modules or vendor directory are not on the shared folder. See https://wiki.phz.fi/Docker and https://wiki.phz.fi/Vagrant for further details how to circumvent the problems.
+- tests/ for tests
 
-### `npm run build` fails to minify
+### 2.4. Development Guide
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Add here examples and hints of good ways how to code the project. Convert the silent knowledge as tacit knowledge here.
 
-Kati was here!
+- See https://en.wikipedia.org/wiki/Knowledge_management
 
-Martin was here
+## 3. Development Environment
 
+### 3.1. Prerequisites
+
+- NodeJS 16+
+- Visual Studio Code
+- Firebase
+
+### 3.2. Start the Application
+
+npm install
+npm start
+
+### 3.3. Access the Application
+
+### 3.4. Run Tests
+
+### 3.5. IDE Setup and Debugging
+
+### 3.6. Version Control
+
+### 3.7. Databases and Migrations
+
+### 3.8. Continuous Integration
+
+## 4. Staging Environment
+
+### 4.1. Access
+
+### 4.2. Deployment
+
+### 4.3. Smoke Tests
+
+#### 4.3.1. Automated Test Cases
+
+#### 4.3.2. Manual Test Cases
+
+### 4.4. Rollback
+
+### 4.5. Logs
+
+### 4.6. Monitoring
+
+## 5. Production Environment
+
+### 5.1. Access
+
+### 5.2. Deployment
+
+### 5.3. Smoke Tests
+
+#### 5.3.1. Automated Test Cases
+
+#### 5.3.2. Manual Test Cases
+
+### 5.4. Rollback
+
+### 5.5. Logs
+
+### 5.6. Monitoring
+
+## 6. Operating Manual
+
+### 6.1 Scheduled Jobs
+
+### 6.2 Manual Processes
+
+## 7. Problems
+
+### 7.1. Environments
+
+### 7.2. Coding
+
+### 7.3. Dependencies
+
+Add here TODO and blockers that you have found related to upgrading to newer versions.
+List the library/framework/service, version, and then the error message.

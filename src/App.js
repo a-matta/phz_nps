@@ -1,11 +1,15 @@
-import React from 'react';
-import './App.css';
-import Stars from './Stars';
+import "./App.css";
+// import SurveyForm from "./components/SurveyForm";
+import SurveyForm from "./components/SurveyFormFunctional";
 
 function App() {
   return (
     <div className="App">
-        <Stars />
+      <SurveyForm
+        question={
+          "How likely are you to recommend Team Glory to your friends and family?"
+        }
+      />
     </div>
   )
 }
