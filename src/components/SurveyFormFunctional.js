@@ -1,8 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 
-// Backend
-import { firebaseUpload } from "../backend/firebase-functions";
+import { firebaseUpload } from "../backend/firebase-function";
 // Styling
 import surveyFormStyles from "./surveyform.module.css";
 
