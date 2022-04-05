@@ -3,36 +3,36 @@
   "version": "0.1.0",
   "private": true,
   "license": "MIT",
-  "license-to-fail":{
+  "license-to-fail": {
     "strictMode": true,
-  "ignoreDevDependencies": true,
-  "warnOnUnknown": true,
-  "allowedPackages": [
-    {
+    "ignoreDevDependencies": true,
+    "warnOnUnknown": true,
+    "allowedPackages": [
+      {
         "name": "axe-core@4.4.1",
         "extraFieldsForDocumentation": "Test",
-        "date": "23 March 2022", 
-        "reason": "React Package" 
-    },
-    {
+        "date": "23 March 2022",
+        "reason": "React Package"
+      },
+      {
         "name": "language-subtag-registry@0.3.21",
         "extraFieldsForDocumentation": "Test",
-        "date": "23 March 2022", 
-        "reason": "React Package" 
-    },
-    {
+        "date": "23 March 2022",
+        "reason": "React Package"
+      },
+      {
         "name": "argparse@2.0.1",
         "extraFieldsForDocumentation": "Test",
-        "date": "23 March 2022", 
-        "reason": "React Package" 
-    },
-    {
+        "date": "23 March 2022",
+        "reason": "React Package"
+      },
+      {
         "name": "pako@1.0.11",
         "extraFieldsForDocumentation": "Test",
-        "date": "1st April 2022", 
-        "reason": "React Package" 
-    }
-  ],
+        "date": "1st April 2022",
+        "reason": "React Package"
+      }
+    ],
     "allowedLicenses": [
       "MIT",
       "Apache-2.0",
@@ -60,7 +60,7 @@
     ]
   },
   "scripts": {
-    "prestart":"./node_modules/.bin/license-to-fail",
+    "prestart": "./node_modules/.bin/license-to-fail",
     "build": "react-scripts build",
     "eject": "react-scripts eject",
     "license-check": "license-checker",
