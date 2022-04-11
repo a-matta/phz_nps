@@ -82,12 +82,13 @@ export default function SurveyFormFunctional(props) {
       choice: choice,
       surveyResult: surveyResult,
       message: message,
-      country: country,
-      ip: ip,
-      browser: browser,
-      platform: platform,
       createdAt: createdAt,
     });
+    // Fields omitted for GDPR:
+    // country: country,
+    // ip: ip,
+    // browser: browser,
+    // platform: platform,
     console.log("submit button working");
     setNotificationActive(true);
     setTimeout(() => {
@@ -127,6 +128,19 @@ export default function SurveyFormFunctional(props) {
     }
     return decodeURI(dc.substring(begin + prefix.length, end));
   };
+
+  // const colorChange = (ratingValue) => {
+  //   console.log(hover);
+  //   console.log(rating);
+  //   switch (ratingValue) {
+  //     case ratingValue <= hover:
+  //       return "orange";
+  //     case ratingValue <= rating:
+  //       return "black";
+  //     default:
+  //       return "white";
+  //   }
+  // };
 
   useEffect(() => {
     if (getCookie("PromoterScore")) {
