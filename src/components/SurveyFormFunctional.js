@@ -130,15 +130,13 @@ export default function SurveyFormFunctional(props) {
   };
 
   // const colorChange = (ratingValue) => {
-  //   console.log(hover);
-  //   console.log(rating);
   //   switch (ratingValue) {
-  //     case ratingValue <= hover:
-  //       return "orange";
-  //     case ratingValue <= rating:
-  //       return "black";
-  //     default:
-  //       return "white";
+  //   case ratingValue <= hover:
+  //     return "orange"
+  //   case ratingValue <= rating:
+  //     return "black"
+  //   default:
+  //     return "white";
   //   }
   // };
 
@@ -187,6 +185,9 @@ export default function SurveyFormFunctional(props) {
                     </p>
 
                     <FaStar
+                    // color={
+                    //   colorChange(ratingValue)
+                    // }
                       color={
                         ratingValue <= (hover || rating) ? "#ed6930" : "white"
                       }
