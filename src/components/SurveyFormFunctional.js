@@ -82,12 +82,13 @@ export default function SurveyFormFunctional(props) {
       choice: choice,
       surveyResult: surveyResult,
       message: message,
-      country: country,
-      ip: ip,
-      browser: browser,
-      platform: platform,
       createdAt: createdAt,
     });
+    // Fields omitted for GDPR:
+    // country: country,
+    // ip: ip,
+    // browser: browser,
+    // platform: platform,
     console.log("submit button working");
     setNotificationActive(true);
     setTimeout(() => {
