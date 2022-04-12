@@ -5,7 +5,7 @@ git archive --format=tar HEAD | tar x -C ~/workspace/docker/project-name
 
 ## 1. Project Description
 
-[Net Promoter Score](https://en.wikipedia.org/wiki/Net_promoter_score) that is widely used metric that takes a form of single survey question asking customers to rate the likelihood that they would reccommend a company, product or service to a friend or colleague. It measures the loyalty of customers to a company. Scores are measured with a single question survey with number 1-10, a higher score is desirable.
+[Net Promoter Score](https://en.wikipedia.org/wiki/Net_promoter_score) that is widely used metric mesurement system that takes a form of single survey question asking customers to rate the likelihood that they would reccommend a company, product or service to a friend or colleague. It measures the loyalty of customers to a company. Scores are measured with a single question survey with number 1-10, a higher score is desirable.
 
 Promoter's Call System allows buisnesses to collect customer feedback and arrive at NPS scores.
 
@@ -15,9 +15,19 @@ Promoter's Call System use their promoter score to measure 'customer satisfactio
 
 ### 1.2. Task Management
 
+We are using JIRA to manage & track our tasks, issues.
+
 ### 1.3. Personas
 
+User research is a first step to creating a persona. By observing users, the team can understand their behavior and motivations, then create a design accordingly.
+
 ### 1.4. Use Cases
+
+Customer 1 is asked a simple question how likely are you to reccommend this company to friend or relative?
+Not at all likely 0 to extremely likely 10 based on their responses or ratings customes are placed into three categories.
+Customer's feedback is expressed their views in their own words.
+If 100 people answered the question so 40% - Promoters, 50% Passive and 10% Detractors
+NPS = 40%-10%= 30%/100= 30
 
 ### 1.5. Non-Functional Requirements
 
@@ -106,11 +116,19 @@ npm start
 
 ### 3.4. Run Tests
 
+cypress - npm run e2e-test
+
 ### 3.5. IDE Setup and Debugging
 
 ### 3.6. Version Control
 
+Survey Form https://github.com/a-matta/phz_ps
+Backend https://github.com/martin-holland/phz_ps_backend
+Dashboard https://github.com/martin-holland/ps_phz_dashboard
+
 ### 3.7. Databases and Migrations
+
+Firebase
 
 ### 3.8. Continuous Integration
 
@@ -123,6 +141,10 @@ npm start
 ### 4.3. Smoke Tests
 
 #### 4.3.1. Automated Test Cases
+
+1. Form can be submitted with message
+2. Form can be sumbitted without a message
+3. Form can be closed without giving a feedback
 
 #### 4.3.2. Manual Test Cases
 
