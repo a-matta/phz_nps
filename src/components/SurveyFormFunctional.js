@@ -129,16 +129,17 @@ export default function SurveyFormFunctional(props) {
     return decodeURI(dc.substring(begin + prefix.length, end));
   };
 
-  // const colorChange = (ratingValue) => {
-  //   switch (ratingValue) {
-  //   case ratingValue <= hover:
-  //     return "orange"
-  //   case ratingValue <= rating:
-  //     return "black"
-  //   default:
-  //     return "white";
-  //   }
-  // };
+  const colorChange = (ratingValue) => {
+    if(ratingValue <= choice) {
+      return "coral"
+    }
+    else if(ratingValue <= hover) {
+      return "#fbceb1"
+    }
+    else {
+      return "white"
+    }
+  };
 
   useEffect(() => {
     if (getCookie("PromoterScore")) {
@@ -173,29 +174,18 @@ export default function SurveyFormFunctional(props) {
 
               return (
                 <div className="circle" key={ratingValue}>
-                  <button
-                    className={surveyFormStyles.circle}
-                    type="radio"
-                    name="rating"
+                    <FaStar
+                    className="star"
                     value={ratingValue}
                     onClick={(event) => handleChoice(ratingValue)}
-                  >
-                    <p className={surveyFormStyles.underNumber}>
-                      {ratingValue}
-                    </p>
-
-                    <FaStar
-                    // color={
-                    //   colorChange(ratingValue)
-                    // }
-                      color={
-                        ratingValue <= (hover || rating) ? "#ed6930" : "white"
-                      }
+                    color={colorChange(ratingValue)}
                       size={50}
                       onMouseEnter={() => setHover(ratingValue)}
                       onMouseLeave={() => setHover(null)}
                     />
-                  </button>
+                    <p className={surveyFormStyles.underNumber}>
+                      {ratingValue}
+                    </p>
                 </div>
               );
             })}
