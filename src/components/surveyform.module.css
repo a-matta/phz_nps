@@ -81,6 +81,14 @@ h4 {
   background-color: coral;
 }
 
+/* .gridWrapper {
+  display: flex;
+} */
+
+.likely {
+  font-size: x-large;
+}
+
 .closeStyle {
   display: flex;
   justify-content: center;
@@ -150,12 +158,18 @@ h4 {
   padding: 0;
 }
 
-.tagContainer {
+.tagContainer1,
+.tagContainer2 {
+  display: none;
+}
+
+.tagContainerDefault {
   display: flex;
   justify-content: space-between;
   width: 40rem;
   color: #000036;
   font-size: 1rem;
+  padding-left: 20px;
 }
 
 .formWrapper {
@@ -286,13 +300,25 @@ textarea {
       "6 7 8 9 10";
   }
 
-  .tagContainer {
-    /* display: none; */
+  .tagContainer1 {
     display: flex;
-    justify-content: space-evenly;
-    width: 35rem;
+    justify-content: flex-start;
+    width: 20rem;
     color: #000036;
     font-size: 1rem;
+    padding-left: 20px;
+  }
+
+  .tagContainer2 {
+    display: flex;
+    justify-content: flex-end;
+    width: 20rem;
+    color: #000036;
+    font-size: 1rem;
+  }
+
+  .tagContainerDefault {
+    display: none;
   }
 
   textarea {

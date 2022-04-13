@@ -168,6 +168,10 @@ export default function SurveyFormFunctional(props) {
             </span>
           </button>
           <h4>{props.question}</h4>
+          <div className={surveyFormStyles.gridWrapper}>
+          <div className={surveyFormStyles.tagContainer1}>
+            <p>Not likely at all</p>
+          </div>
           <div className={surveyFormStyles.gridContainer}>
             {[...Array(10)].map((circle, i) => {
               const ratingValue = i + 1;
@@ -190,16 +194,20 @@ export default function SurveyFormFunctional(props) {
               );
             })}
           </div>
-          <div className={surveyFormStyles.tagContainer}>
+          <div className={surveyFormStyles.tagContainerDefault}>
             <p>Not likely at all</p>
             <p>Extremely likely</p>
+          </div>
+          <div className={surveyFormStyles.tagContainer2}>
+            <p>Extremely likely</p>
+          </div>
           </div>
           <div className={surveyFormStyles.formWrapper} id="formWrapper">
             <form className={surveyFormStyles.form} id="message">
               <textarea
                 name="message"
                 className={surveyFormStyles.message}
-                placeholder="Please add some feedback"
+                placeholder="We'd love to hear your feedback"
                 onChange={(event) => setMessage(event.target.value)}
               ></textarea>
               <button
