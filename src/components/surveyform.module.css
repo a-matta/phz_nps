@@ -5,11 +5,12 @@
     rgb(109, 187, 205) 37%,
     rgba(121, 158, 210) 100%
   ); */
-  --dark-background: rgb(107,215,241);
+  --dark-background: rgb(107, 215, 241);
   --main-background: radial-gradient(
-    circle, 
-    rgba(177,207,249,1) 70%, 
-    rgba(121,158,210,1) 100%);
+    circle,
+    rgba(177, 207, 249, 1) 70%,
+    rgba(121, 158, 210, 1) 100%
+  );
   --textColor: ;
   --altTextColor: ;
   /* --secondary-background: #ed6930; */
@@ -146,7 +147,6 @@ h4 {
   align-items: center;
   border-radius: 50%;
   border: none;
-  background-color: inherit;
   padding: 0;
 }
 
@@ -287,7 +287,12 @@ textarea {
   }
 
   .tagContainer {
-    display: none;
+    /* display: none; */
+    display: flex;
+    justify-content: space-evenly;
+    width: 35rem;
+    color: #000036;
+    font-size: 1rem;
   }
 
   textarea {
