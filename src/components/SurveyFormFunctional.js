@@ -8,7 +8,7 @@ import surveyFormStyles from "./surveyform.module.css";
 
 // Icons
 import { AiOutlineClose } from "react-icons/ai";
-import { FaStar } from "react-icons/fa";
+import { FaStar, FaHeart } from "react-icons/fa";
 
 export default function SurveyFormFunctional(props) {
   // Hooks
@@ -178,7 +178,8 @@ export default function SurveyFormFunctional(props) {
 
               return (
                 <div className="circle" key={ratingValue}>
-                    <FaStar
+                    {/* <FaStar */}
+                    <FaHeart
                     className="star"
                     value={ratingValue}
                     onClick={(event) => handleChoice(ratingValue)}
@@ -228,7 +229,7 @@ export default function SurveyFormFunctional(props) {
             className={`fadeOut ${surveyFormStyles.notification}`}
             id="fadeOut"
           >
-            Thank you for your feedback
+            Thank you!
           </p>
         </div>
       )}

@@ -1,10 +1,4 @@
 :root {
-  /* --dark-background: rgba(136, 229, 251);
-  --main-background: radial-gradient(
-    circle,
-    rgb(109, 187, 205) 37%,
-    rgba(121, 158, 210) 100%
-  ); */
   --dark-background: rgb(107, 215, 241);
   --main-background: radial-gradient(
     circle,
@@ -79,6 +73,7 @@ h4 {
 
 .closeButton:hover {
   background-color: coral;
+  cursor: pointer;
 }
 
 /* .gridWrapper {
@@ -209,10 +204,13 @@ textarea {
   width: 115px;
   height: 40px;
   margin: 1rem 0;
+  font-size: 1rem;
+  box-shadow: 0 0 3px #000036;
 }
 
 .submitButton:hover {
-  background-color: rgb(237, 76, 17);
+  box-shadow: 0 0 7px #000036;
+  cursor: pointer;
 }
 
 .notification {
@@ -220,19 +218,22 @@ textarea {
   bottom: 0;
   margin-left: auto;
   margin-right: auto;
+  margin-bottom: 50px;
   color: #000036;
   left: 0;
   right: 0;
   text-align: center;
   z-index: 1;
-  font-size: 1.2rem;
+  font-size: 1.4rem;
   padding: 1rem;
   width: 25vw;
+  height: auto;
   background-image: var(--main-background);
   border: 0;
-  border-radius: 10px 50px 50px 10px;
+  border-radius: 5px;
   box-shadow: rgba(56, 117, 249, 0.2) 0 15px 30px -5px;
   padding-bottom: 1rem;
+  font-family: inherit;
   -webkit-animation-duration: 10s;
   animation-duration: 10s;
   -webkit-animation-fill-mode: both;
