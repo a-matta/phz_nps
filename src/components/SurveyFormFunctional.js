@@ -55,7 +55,8 @@ export default function SurveyFormFunctional(props) {
   const handleChoice = (option) => {
     setChoice(option);
     setRating(option);
-    convertToScore(choice);
+    console.log(choice);
+    convertToScore(option);
     let formDiv = document.getElementById("message");
     formDiv.style.display = "flex";
     formDiv.style.flexDirection = "column";
@@ -130,14 +131,12 @@ export default function SurveyFormFunctional(props) {
   };
 
   const colorChange = (ratingValue) => {
-    if(ratingValue <= choice) {
-      return "coral"
-    }
-    else if(ratingValue <= hover) {
-      return "#fbceb1"
-    }
-    else {
-      return "white"
+    if (ratingValue <= choice) {
+      return "coral";
+    } else if (ratingValue <= hover) {
+      return "#fbceb1";
+    } else {
+      return "white";
     }
   };
 
@@ -169,21 +168,21 @@ export default function SurveyFormFunctional(props) {
           </button>
           <h4>{props.question}</h4>
           <div className={surveyFormStyles.gridWrapper}>
-          <div className={surveyFormStyles.tagContainer1}>
-            <p>Not likely at all</p>
-          </div>
-          <div className={surveyFormStyles.gridContainer}>
-            {[...Array(10)].map((circle, i) => {
-              const ratingValue = i + 1;
+            <div className={surveyFormStyles.tagContainer1}>
+              <p>Not likely at all</p>
+            </div>
+            <div className={surveyFormStyles.gridContainer}>
+              {[...Array(10)].map((circle, i) => {
+                const ratingValue = i + 1;
 
-              return (
-                <div className="circle" key={ratingValue}>
+                return (
+                  <div className="circle" key={ratingValue}>
                     {/* <FaStar */}
                     <FaHeart
-                    className="star"
-                    value={ratingValue}
-                    onClick={(event) => handleChoice(ratingValue)}
-                    color={colorChange(ratingValue)}
+                      className="star"
+                      value={ratingValue}
+                      onClick={(event) => handleChoice(ratingValue)}
+                      color={colorChange(ratingValue)}
                       size={50}
                       onMouseEnter={() => setHover(ratingValue)}
                       onMouseLeave={() => setHover(null)}
@@ -191,17 +190,17 @@ export default function SurveyFormFunctional(props) {
                     <p className={surveyFormStyles.underNumber}>
                       {ratingValue}
                     </p>
-                </div>
-              );
-            })}
-          </div>
-          <div className={surveyFormStyles.tagContainerDefault}>
-            <p>Not likely at all</p>
-            <p>Extremely likely</p>
-          </div>
-          <div className={surveyFormStyles.tagContainer2}>
-            <p>Extremely likely</p>
-          </div>
+                  </div>
+                );
+              })}
+            </div>
+            <div className={surveyFormStyles.tagContainerDefault}>
+              <p>Not likely at all</p>
+              <p>Extremely likely</p>
+            </div>
+            <div className={surveyFormStyles.tagContainer2}>
+              <p>Extremely likely</p>
+            </div>
           </div>
           <div className={surveyFormStyles.formWrapper} id="formWrapper">
             <form className={surveyFormStyles.form} id="message">
