@@ -19,7 +19,7 @@ describe("The Promoter Score Form", () => {
     const rating = Math.floor(Math.random() * 10) + 1;
     const feedback = lorem.generateWords(7);
     cy.log(rating);
-    cy.get(`button[class^=surveyform_circle][value=${rating}]`).click();
+    cy.get(`svg[class=star][value=${rating}]`).click();
     cy.get("form[class^=surveyform_form]")
       .get("textarea[name=message]")
       .type(feedback);
@@ -30,7 +30,7 @@ describe("The Promoter Score Form", () => {
   it("form can be submitted without a message", () => {
     const rating = Math.floor(Math.random() * 10) + 1;
     cy.log(rating);
-    cy.get(`button[class^=surveyform_circle][value=${rating}]`).click();
+    cy.get(`svg[class=star][value=${rating}]`).click();
     cy.get("button[class^=surveyform_submitButton__af3z3]").click();
     cy.get("p[id^=fadeOut]").should("be.visible");
   });
