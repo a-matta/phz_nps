@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import axios from "axios";
 
 // Backend
@@ -24,6 +24,7 @@ export default function SurveyFormFunctional(props) {
   const [platform, setPlatform] = useState("");
   const [browser, setBrowser] = useState("");
   const [country, setCountry] = useState("");
+  const [disabled, setDisabled] = useState(false);
 
   // Functions
 
@@ -139,6 +140,17 @@ export default function SurveyFormFunctional(props) {
     }
   };
 
+  const handleMessageChange = (text) => {
+    let allowedChars = /^[a-zA-Z0-9\d ,.!?]*$/g;
+    if (text.match(allowedChars)) {
+      setMessage(text);
+      setDisabled(false);
+    } else {
+      console.log("failed to match");
+      setDisabled(true);
+    }
+  };
+
   useEffect(() => {
     if (getCookie("PromoterScore")) {
       handleClose();
@@ -207,16 +219,20 @@ export default function SurveyFormFunctional(props) {
                 name="message"
                 className={surveyFormStyles.message}
                 placeholder="We'd love to hear your feedback"
-                onChange={(event) => setMessage(event.target.value)}
+                onChange={(event) => handleMessageChange(event.target.value)}
               ></textarea>
               <button
                 className={surveyFormStyles.submitButton}
                 type="submit"
                 onClick={(event) => handleSubmit(event)}
                 data-testid="button"
+                disabled={disabled}
               >
                 Send
               </button>
+              {disabled && (
+                <p>Enter valid characters for ex. a-z, A-Z, 1-10 etc</p>
+              )}
             </form>
           </div>
         </div>
