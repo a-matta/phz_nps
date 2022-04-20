@@ -145,7 +145,7 @@ export default function SurveyFormFunctional(props) {
     let newText = text.trim();
     console.log(newText);
     if (text.match(allowedChars)) {
-      setMessage(newText);
+      setMessage(text);
       setDisabled(false);
     } else {
       console.log("failed to match");
