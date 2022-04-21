@@ -24,7 +24,7 @@ export default function SurveyFormFunctional(props) {
   const [platform, setPlatform] = useState("");
   const [browser, setBrowser] = useState("");
   const [country, setCountry] = useState("");
-  const [disabled, setDisabled] = useState(false);
+  const [disabled, setDisabled] = useState(true);
 
   // Functions
 
@@ -141,14 +141,13 @@ export default function SurveyFormFunctional(props) {
   };
 
   const handleMessageChange = (text) => {
-    let allowedChars = /^[a-zA-Z0-9\d ,.!?]*$/g;
+    let allowedChars = /^\w+((\s)+(\w)+)*$/g;
+
     let newText = text.trim();
-    console.log(newText);
-    if (text.match(allowedChars)) {
-      setMessage(text);
+    if (newText.match(allowedChars)) {
+      setMessage(newText);
       setDisabled(false);
     } else {
-      console.log("failed to match");
       setDisabled(true);
     }
   };
