@@ -141,7 +141,7 @@ export default function SurveyFormFunctional(props) {
   };
 
   const handleMessageChange = (text) => {
-    let allowedChars = /^\w+((\s)+(\w)+)*$/g;
+    let allowedChars = /^[A-Za-z0-9_,!?]+(\s+[A-Za-z0-9_,!?]+)*$/g;
 
     let newText = text.trim();
     if (newText.match(allowedChars)) {
