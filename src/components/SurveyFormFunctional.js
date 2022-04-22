@@ -25,6 +25,9 @@ export default function SurveyFormFunctional(props) {
   const [browser, setBrowser] = useState("");
   const [country, setCountry] = useState("");
   const [disabled, setDisabled] = useState(true);
+  const [displayError, setDisplayError] = useState(false);
+
+  const errorMessage = "Enter valid characters for ex. a-z, A-Z, 1-10 etc";
 
   // Functions
 
@@ -147,8 +150,14 @@ export default function SurveyFormFunctional(props) {
     if (newText.match(allowedChars)) {
       setMessage(newText);
       setDisabled(false);
+      setDisplayError(false);
     } else {
       setDisabled(true);
+      setDisplayError(true);
+    }
+
+    if (text === "") {
+      setDisplayError(false);
     }
   };
 
@@ -231,9 +240,7 @@ export default function SurveyFormFunctional(props) {
               >
                 Send
               </button>
-              {disabled && (
-                <p>Enter valid characters for ex. a-z, A-Z, 1-10 etc</p>
-              )}
+              {displayError && <p>{errorMessage}</p>}
             </form>
           </div>
         </div>
