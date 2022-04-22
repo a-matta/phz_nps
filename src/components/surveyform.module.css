@@ -188,10 +188,11 @@ h4 {
 
 textarea {
   font-family: inherit;
+  text-align: justify;
   height: 3rem;
   width: 50vw;
   resize: none;
-  padding: 20px;
+  padding: 0.5rem;
   margin-bottom: 0.5rem;
   border-radius: 10px;
 }
