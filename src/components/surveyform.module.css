@@ -247,6 +247,9 @@ textarea {
   padding-bottom: 1rem;
 }
 
+.messageError {
+}
+
 @-webkit-keyframes fadeOut {
   0% {
     opacity: 1;

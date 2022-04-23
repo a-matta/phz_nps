@@ -240,7 +240,9 @@ export default function SurveyFormFunctional(props) {
               >
                 Send
               </button>
-              {displayError && <p>{errorMessage}</p>}
+              {displayError && (
+                <p className={surveyFormStyles.messageError}>{errorMessage}</p>
+              )}
             </form>
           </div>
         </div>
