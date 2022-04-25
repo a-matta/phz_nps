@@ -14,6 +14,7 @@ describe("The Promoter Score Form", () => {
   beforeEach(() => {
     cy.visit("http://localhost:3000");
   });
+  it("form should have feedback question", () => {});
 
   it("form can be submitted with a message", () => {
     const rating = Math.floor(Math.random() * 10) + 1;
