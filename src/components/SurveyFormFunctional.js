@@ -24,7 +24,7 @@ export default function SurveyFormFunctional(props) {
   const [platform, setPlatform] = useState("");
   const [browser, setBrowser] = useState("");
   const [country, setCountry] = useState("");
-  const [disabled, setDisabled] = useState(true);
+  const [disabled, setDisabled] = useState(false);
   const [displayError, setDisplayError] = useState(false);
 
   const errorMessage = "Enter valid characters for ex. a-z, A-Z, 1-10 etc";
@@ -156,7 +156,8 @@ export default function SurveyFormFunctional(props) {
       setDisplayError(true);
     }
 
-    if (text === "") {
+    if (newText === "") {
+      setDisabled(false);
       setDisplayError(false);
     }
   };
