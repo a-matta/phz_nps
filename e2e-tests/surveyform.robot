@@ -4,6 +4,8 @@ Library    SeleniumLibrary
 Library    Collections
 Library    String
 Library    FakerLibrary
+Library    XML
+Library    Screenshot
 Test Setup    Open UI Application
 
 *** Variables ***
@@ -14,6 +16,9 @@ ${FEEDBACK_AREA}    name:message
 ${random_string}    Generate Random String
 ${SEND_BUTTON}    class:surveyform_submitButton__af3z3
 ${THANKYOU_BUTTON}    id:fadeOut
+${CLOSE_BUTTON}    class:surveyform_closeStyle__INxqV
+${TITLE}    xpath://div[@class='surveyform_surveyForm__ERcpJ']/h4
+
 
 *** Keywords ***
 Open UI Application
@@ -46,4 +51,14 @@ Form cannot be sumbitted with special characters
     Log    ${lorem}
     Input Text    ${FEEDBACK_AREA}    ${lorem}#€%&
     Element Should Be Disabled    ${SEND_BUTTON}
+
+Form can be closed without sending a feedback
+    Click Element    ${HEART}
+    Wait Until Element Is Visible    ${FEEDBACK_AREA}
+    Sleep    5
+    Click Element    ${CLOSE_BUTTON}
+    Capture Page Screenshot
+
+Form should have title
+    Page Should Contain Element   ${TITLE}    How likely are you to recommend Team Glory to your friends and family?
 
