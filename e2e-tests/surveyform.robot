@@ -13,6 +13,7 @@ ${HEART}    class:star
 ${FEEDBACK_AREA}    name:message
 ${random_string}    Generate Random String
 ${SEND_BUTTON}    class:surveyform_submitButton__af3z3
+${THANKYOU_BUTTON}    id:fadeOut
 
 *** Keywords ***
 Open UI Application
@@ -31,3 +32,18 @@ Form can be submitted with message
     Log    ${lorem}
     Input Text    ${FEEDBACK_AREA}    ${lorem}
     Click Button    ${SEND_BUTTON}
+    Element Should Be Visible    ${THANKYOU_BUTTON}
+
+Form cannot be submitted without a message
+    Click Element    ${HEART}
+    Click Button    ${SEND_BUTTON}
+
+Form cannot be sumbitted with special characters
+    Click Element    ${HEART}
+    Wait Until Element Is Visible    ${FEEDBACK_AREA}
+    Press Keys    ${FEEDBACK_AREA}    RETURN
+    ${lorem}=    Paragraph    5
+    Log    ${lorem}
+    Input Text    ${FEEDBACK_AREA}    ${lorem}#€%&
+    Element Should Be Disabled    ${SEND_BUTTON}
+
