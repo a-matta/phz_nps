@@ -190,6 +190,7 @@ textarea {
   font-family: inherit;
   text-align: justify;
   height: 3rem;
+  min-height: 3rem;
   width: 50vw;
   resize: none;
   padding: 0.5rem;
