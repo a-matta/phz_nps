@@ -7,7 +7,6 @@
   );
   --textColor: ;
   --altTextColor: ;
-  /* --secondary-background: #ed6930; */
 }
 
 html {
@@ -75,10 +74,6 @@ h4 {
   background-color: coral;
   cursor: pointer;
 }
-
-/* .gridWrapper {
-  display: flex;
-} */
 
 .likely {
   font-size: x-large;
@@ -246,9 +241,6 @@ textarea {
   -webkit-animation-fill-mode: both;
   animation-fill-mode: both;
   padding-bottom: 1rem;
-}
-
-.messageError {
 }
 
 @-webkit-keyframes fadeOut {
