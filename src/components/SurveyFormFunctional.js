@@ -171,7 +171,7 @@ export default function SurveyFormFunctional(props) {
         </div>
       </div>
       {notificationActive && (
-        <div>
+        <div className={surveyFormStyles.notificationBox}>
           <p
             className={`fadeOut ${surveyFormStyles.notification}`}
             id="fadeOut"

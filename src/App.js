@@ -6,12 +6,10 @@ function App() {
   return (
     <div className="App">
       <SurveyForm
-        question={
-          "How likely are you to recommend Team Glory to your friends and family?"
-        }
+        question={"Would you recommend PHZ Full Stack as an employer?"}
       />
     </div>
-  )
+  );
 }
 
 export default App;
