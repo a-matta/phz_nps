@@ -140,6 +140,12 @@ Firebase
 
 ### 4.3. Smoke Tests
 
+1. Form can be submitted with message.
+2. Form can be sumbitted without a message.
+3. Form can be closed without giving a feedback.
+4. User can login and view dashboard.
+5. Filtering of dates.
+
 #### 4.3.1. Automated Test Cases
 
 1. Form can be submitted with message
@@ -165,6 +171,20 @@ Firebase
 #### 5.3.1. Automated Test Cases
 
 #### 5.3.2. Manual Test Cases
+
+1. Launch Survey form at https://embedtest-mh.netlify.app, as expected survey form loads successfully is working.
+2. Cross button should work as per functionality, when clicked on the Cross button the survey form should close, survey form closes sucessfully as expected.
+3. Clicking on any heart should open feedback form, when heart icon is clicked feedback form can be seen.
+4. Click on any heart ex. 10th,7th or 1st heart, hover should work, when any on heart icon is clicked hover is working.
+5. Click on any heart without writing a feedback, when heart icon is clicked and send message is clicked, form is submitted sucessfully.
+6. Add feedback and sumbit form sucessfully.
+7. User cannot add special characters €#", when tried to add send button was disabled
+8. Add valid username/password, Login works sucessfully
+9. Add invalid username/password, Login should not work, user cannot view dashboard
+10. Check if messages appear is descending order, messages are seen in descending order
+11. Check if logout button is working, logout button works
+12. Check if theme works, theme works
+13. Check if filter works with future dates & past dates
 
 ### 5.4. Rollback
 
