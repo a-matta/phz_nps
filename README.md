@@ -123,6 +123,7 @@ npm start
 Survey Form https://github.com/a-matta/phz_ps
 Backend https://github.com/martin-holland/phz_ps_backend
 Dashboard https://github.com/martin-holland/ps_phz_dashboard
+e2e tests https://github.com/a-matta/e2e-tests-phz
 
 ### 3.7. Databases and Migrations
 
@@ -130,11 +131,20 @@ Firebase
 
 ### 3.8. Continuous Integration
 
-## 4. Production Environment
+## 4. Staging/Production Environment
 
-### 4.1. Access
+### 4.1. Prerequisites
 
-### 4.2. Deployment
+1. Python3 & pip
+2. pip install robotframework(5.0)
+3. check robot version - robot --version
+4. Install relevant browser drive and add to PATH. For example webdrivermanager firefox chrome --linkpath /usr/local/bin
+
+### 4.2 Customizing Tests
+
+1. The UI tests run with Chrome by default. To run in a different browser ensure the driver is in path and run the tests with variable override. For example to run with firefox use --variable BROWSER:firefox
+
+### 4.3. Deployment
 
 ### 4.3. Smoke Tests
 
@@ -169,6 +179,21 @@ Firebase
 ### 4.4. Rollback
 
 ### 4.5. Logs
+
+# Add and Verify Feedback in Chrome
+
+Survey Form can be submitted with message ....Miss join matter alone once in cold.
+Survey Form can be submitted with message ....Miss join matter alone once in cold.
+Survey Form can be submitted with message | PASS |
+
+---
+
+Add and Verify Feedback in Chrome | PASS |
+1 test, 1 passed, 0 failed
+==============================================================================
+Output: /Users/bc-macair019/code/a-matta/unittests-phzfrontend/phz_e2e/output.xml
+Log: /Users/bc-macair019/code/a-matta/unittests-phzfrontend/phz_e2e/log.html
+Report: /Users/bc-macair019/code/a-matta/unittests-phzfrontend/phz_e2e/report.html
 
 ### 4.6. Monitoring
 
