@@ -107,7 +107,6 @@
   "devDependencies": {
     "@cypress/react": "^5.12.4",
     "@cypress/webpack-dev-server": "^1.8.4",
-    "cypress": "^9.5.3",
     "eslint-plugin-cypress": "^2.12.1",
     "license-checker": "^25.0.1"
   }
