@@ -116,8 +116,6 @@ npm start
 
 ### 3.4. Run Tests
 
-cypress - npm run e2e-test
-
 ### 3.5. IDE Setup and Debugging
 
 ### 3.6. Version Control
@@ -132,7 +130,7 @@ Firebase
 
 ### 3.8. Continuous Integration
 
-## 4. Staging Environment
+## 4. Production Environment
 
 ### 4.1. Access
 
@@ -154,24 +152,6 @@ Firebase
 
 #### 4.3.2. Manual Test Cases
 
-### 4.4. Rollback
-
-### 4.5. Logs
-
-### 4.6. Monitoring
-
-## 5. Production Environment
-
-### 5.1. Access
-
-### 5.2. Deployment
-
-### 5.3. Smoke Tests
-
-#### 5.3.1. Automated Test Cases
-
-#### 5.3.2. Manual Test Cases
-
 1. Launch Survey form at https://embedtest-mh.netlify.app, as expected survey form loads successfully is working.
 2. Cross button should work as per functionality, when clicked on the Cross button the survey form should close, survey form closes sucessfully as expected.
 3. Clicking on any heart should open feedback form, when heart icon is clicked feedback form can be seen.
@@ -186,25 +166,25 @@ Firebase
 12. Check if theme works, theme works
 13. Check if filter works with future dates & past dates
 
-### 5.4. Rollback
+### 4.4. Rollback
 
-### 5.5. Logs
+### 4.5. Logs
 
-### 5.6. Monitoring
+### 4.6. Monitoring
 
-## 6. Operating Manual
+## 5. Operating Manual
 
-### 6.1 Scheduled Jobs
+### 5.1 Scheduled Jobs
 
-### 6.2 Manual Processes
+### 5.2 Manual Processes
 
-## 7. Problems
+## 6. Problems
 
-### 7.1. Environments
+### 6.1. Environments
 
-### 7.2. Coding
+### 6.2. Coding
 
-### 7.3. Dependencies
+### 6.3. Dependencies
 
 Add here TODO and blockers that you have found related to upgrading to newer versions.
 List the library/framework/service, version, and then the error message.
