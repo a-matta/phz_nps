@@ -120,6 +120,8 @@ robot -testcasename.robot OR robot example.robot
 
 ### 3.5. IDE Setup and Debugging
 
+Visual Code
+
 ### 3.6. Version Control
 
 Survey Form https://github.com/a-matta/phz_ps
@@ -153,8 +155,8 @@ Firebase
 1. Form can be submitted with message.
 2. Form can be sumbitted without a message.
 3. Form can be closed without giving a feedback.
-4. User can login and view dashboard.
-5. Filtering of dates.
+4. Check for validations.
+5. Thankyou - must appear
 
 #### 4.3.1. Automated Test Cases
 
@@ -171,16 +173,15 @@ Firebase
 5. Click on any heart without writing a feedback, when heart icon is clicked and send message is clicked, form is submitted sucessfully.
 6. Add feedback and sumbit form sucessfully.
 7. User cannot add special characters €#", when tried to add send button was disabled
-8. Add valid username/password, Login works sucessfully
-9. Add invalid username/password, Login should not work, user cannot view dashboard
-10. Check if messages appear is descending order, messages are seen in descending order
-11. Check if logout button is working, logout button works
-12. Check if theme works, theme works
-13. Check if filter works with future dates & past dates
 
 ### 4.4. Rollback
 
+User can reset database from firebase => Go to Firebase Promoter project and Firestore database and in survey_results => delete collection. WARNING! if survey results are deleted, all test data will be deleted permenently.
+
 ### 4.5. Logs
+
+![Screenshot of the application](./Screenshot1.png)
+![Screenshot of the application](./Screenshot2.png)
 
 # Add and Verify Feedback in Chrome
 
