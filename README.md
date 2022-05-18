@@ -116,7 +116,11 @@ npm start
 
 ### 3.4. Run Tests
 
+robot -testcasename.robot OR robot example.robot
+
 ### 3.5. IDE Setup and Debugging
+
+Visual Code
 
 ### 3.6. Version Control
 
@@ -151,8 +155,8 @@ Firebase
 1. Form can be submitted with message.
 2. Form can be sumbitted without a message.
 3. Form can be closed without giving a feedback.
-4. User can login and view dashboard.
-5. Filtering of dates.
+4. Check for validations.
+5. Thankyou - must appear
 
 #### 4.3.1. Automated Test Cases
 
@@ -169,31 +173,15 @@ Firebase
 5. Click on any heart without writing a feedback, when heart icon is clicked and send message is clicked, form is submitted sucessfully.
 6. Add feedback and sumbit form sucessfully.
 7. User cannot add special characters €#", when tried to add send button was disabled
-8. Add valid username/password, Login works sucessfully
-9. Add invalid username/password, Login should not work, user cannot view dashboard
-10. Check if messages appear is descending order, messages are seen in descending order
-11. Check if logout button is working, logout button works
-12. Check if theme works, theme works
-13. Check if filter works with future dates & past dates
 
 ### 4.4. Rollback
 
+User can reset database from firebase => Go to Firebase Promoter project and Firestore database and in survey_results => delete collection. WARNING! if survey results are deleted, all test data will be deleted permenently.
+
 ### 4.5. Logs
 
-# Add and Verify Feedback in Chrome
-
-Survey Form can be submitted with message ....Miss join matter alone once in cold.
-Survey Form can be submitted with message ....Miss join matter alone once in cold.
-Survey Form can be submitted with message | PASS |
-
----
-
-Add and Verify Feedback in Chrome | PASS |
-1 test, 1 passed, 0 failed
-==============================================================================
-Output: /Users/bc-macair019/code/a-matta/unittests-phzfrontend/phz_e2e/output.xml
-Log: /Users/bc-macair019/code/a-matta/unittests-phzfrontend/phz_e2e/log.html
-Report: /Users/bc-macair019/code/a-matta/unittests-phzfrontend/phz_e2e/report.html
+![Screenshot of the application](./Screenshot1.png)
+![Screenshot of the application](./Screenshot2.png)
 
 ### 4.6. Monitoring
 
