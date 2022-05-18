@@ -183,21 +183,6 @@ User can reset database from firebase => Go to Firebase Promoter project and Fir
 ![Screenshot of the application](./Screenshot1.png)
 ![Screenshot of the application](./Screenshot2.png)
 
-# Add and Verify Feedback in Chrome
-
-Survey Form can be submitted with message ....Miss join matter alone once in cold.
-Survey Form can be submitted with message ....Miss join matter alone once in cold.
-Survey Form can be submitted with message | PASS |
-
----
-
-Add and Verify Feedback in Chrome | PASS |
-1 test, 1 passed, 0 failed
-==============================================================================
-Output: /Users/bc-macair019/code/a-matta/unittests-phzfrontend/phz_e2e/output.xml
-Log: /Users/bc-macair019/code/a-matta/unittests-phzfrontend/phz_e2e/log.html
-Report: /Users/bc-macair019/code/a-matta/unittests-phzfrontend/phz_e2e/report.html
-
 ### 4.6. Monitoring
 
 ## 5. Operating Manual
