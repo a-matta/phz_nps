@@ -116,6 +116,8 @@ npm start
 
 ### 3.4. Run Tests
 
+robot -testcasename.robot OR robot example.robot
+
 ### 3.5. IDE Setup and Debugging
 
 ### 3.6. Version Control
