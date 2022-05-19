@@ -273,6 +273,8 @@ Once the form has been embedded onto the website, it will appear on the lower pa
 
 Once a user has clicked on a heart to give their score and possibly left some feedback (this is optional), they are able to send it their result. Once a result has been sent a cookie automatically prevents a user from sending another review until 30 days have passed. 
 
+In order to use this form, the user must create their own firebase account. Once this is done, they must use the config file of their own firebase and replace the config file within this project as well as the dashboard in order to connect the firebase.
+
 ### 5.1 Manual Processes
 
 **_Optional_**
