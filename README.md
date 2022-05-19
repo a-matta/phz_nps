@@ -244,6 +244,8 @@ User can reset database from firebase => Go to Firebase Promoter project and Fir
 
 ### 5.1 Manual Processes
 
+**_Optional_**
+
 To add manual data into firebase database for testing visit:
 
 http://console.firebase.google.com
