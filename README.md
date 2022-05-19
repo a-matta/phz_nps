@@ -256,6 +256,23 @@ User can reset database from firebase => Go to Firebase Promoter project and Fir
 
 ## 5. Operating Manual
 
+User can embed the form onto their website by inserting the following code into their index html.
+
+Inside the head tag:
+```html
+<script defer="defer" src="https://embedtest-mh.netlify.app/main.js"></script>
+<link href="https://embedtest-mh.netlify.app/main.css" rel="stylesheet"/>
+```
+Inside the body tag:
+```html
+<noscript>You need to enable JavaScript to run this app</noscript>
+<div id="promoterscore"></div>
+```
+
+Once the form has been embedded onto the website, it will appear on the lower part of the page as demonstrated on the [Live Link](https://embedtest-mh.netlify.app/)
+
+Once a user has clicked on a heart to give their score and possibly left some feedback (this is optional), they are able to send it their result. Once a result has been sent a cookie automatically prevents a user from sending another review until 30 days have passed. 
+
 ### 5.1 Manual Processes
 
 **_Optional_**
