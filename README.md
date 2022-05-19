@@ -116,6 +116,8 @@ npm start
 
 ### 3.4. Run Tests
 
+From repository : https://github.com/a-matta/e2ephz
+
 robot -testcasename.robot OR robot example.robot
 
 ### 3.5. IDE Setup and Debugging
@@ -125,8 +127,8 @@ Extensions installed
 
 1. Eslint
 2. Prettier
-3. import cost
-4. code runner
+3. Import cost
+4. Code runner
 5. ES7+ React/Redux/React-Native snippets
 6. Live server
 7. Simple React Snippets
