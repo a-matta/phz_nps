@@ -103,11 +103,23 @@ where the src is changed to where you are hosting it from eg:
 
 ### 3.4. Run Tests
 
+From repository : https://github.com/a-matta/e2ephz
+
 robot -testcasename.robot OR robot example.robot
 
 ### 3.5. IDE Setup and Debugging
 
 Visual Code
+Extensions installed
+
+1. Eslint
+2. Prettier
+3. Import cost
+4. Code runner
+5. ES7+ React/Redux/React-Native snippets
+6. Live server
+7. Simple React Snippets
+8. Robot Framework Language Server
 
 ### 3.6. Version Control
 
