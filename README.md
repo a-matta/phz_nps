@@ -1,9 +1,14 @@
-# Promoter's Call System
+# Promoter Score Frontnend Survey Form, Backend Firebase Functions, Dashboard data retrieval
 
 Usage:
 git archive --format=tar HEAD | tar x -C ~/workspace/docker/project-name
 
 ## 1. Project Description
+
+[Live Link](https://embedtest-mh.netlify.app/) - Survey Form
+[Link to backend repo](https://github.com/martin-holland/phz_ps_backend) - Firebase Functions
+[Link to Dashboard repo](https://github.com/martin-holland/ps_phz_dashboard) - Dashboard
+[Testing Repo](https://github.com/a-matta/e2ephz) - End to End Testing Repo, designed to work with Survey Form, backend and Dashboard.
 
 [Net Promoter Score](https://en.wikipedia.org/wiki/Net_promoter_score) that is widely used metric mesurement system that takes a form of single survey question asking customers to rate the likelihood that they would reccommend a company, product or service to a friend or colleague. It measures the loyalty of customers to a company. Scores are measured with a single question survey with number 1-10, a higher score is desirable.
 
@@ -41,63 +46,16 @@ To calculate your Net Promoter Score, subtract the percentage of Detractors from
 
 ### 2.1. Technologies
 
-All PHZ Full Stack -projects should encapsulate all environments by virtualization. Choose one of the following for your project:
-
 Dev
 
 - React
 - CSS
 - Firebase
-- Vagrant/Virtualbox
-- Docker-compose/Docker
+- Netlify
 
 CI
 
-- use dev -env on ci.in.phz.fi + Jenkins executors running Docker or Vagrant/Virtualbox.
-- Jenkins
-- (do not use Gitlab CI, or AWS Code Deploy or other CI unless you have a permission from management, can rationalize the exception to management and you know what you are doing)
-- Nothing should be run outside virtualization and everything should be wrapped inside the container/virtual machine
-- do not pin the projects down on any individual executor, but set up the builds so that they can be run on any executor machine
-
-Staging
-
-- Xen / PHZ Virtual Machines
-- PHZ Docker Swarm
-- PHZ Kubernetes
-
-Production
-
-- Xen / PHZ Virtual Machines + Baremetal Database db.in.phz.fi
-- PHZ Docker Swarm (internal projects only)
-- PHZ Kubernetes (internal projects only)
-- AWS (customer projects, but customer needs to pay for it and there needs to be a contract in place with the customer before you start to set up the AWS env)
-
-### 2.2. Naming, Terms and Key Concepts
-
-Environments and the configs should be named as
-
-- dev: docker-compose.yml (i.e. use the default names for dev env), but .env.dev
-- (ci): use the dev -env on CI
-- stg: docker-compose.stg.yml, .env.stg
-- prod: docker-compose.prod.yml, .env.prod
-
-### 2.3. Coding Convention
-
-Directory structure
-
-- doc/ for UML documents
-- etc/ for nginx, ssh etc configs. Can be cp -pr etc/ /etc to the virtual machine during provisioning and matches the os directory structure
-- results/ test results
-- reports/ for e.g. code coverage reports
-- src/ for source code
-  \*\* Note! Source code should be placed under a single folder (src) that can be mounted over Docker -volume or Vagrant -shared folder inside the virtual machine so that node_modules or vendor directory are not on the shared folder. See https://wiki.phz.fi/Docker and https://wiki.phz.fi/Vagrant for further details how to circumvent the problems.
-- tests/ for tests
-
-### 2.4. Development Guide
-
-Add here examples and hints of good ways how to code the project. Convert the silent knowledge as tacit knowledge here.
-
-- See https://en.wikipedia.org/wiki/Knowledge_management
+- Currently set up to use Netlify CI. Building when changes are made to the repository with deployment testing within Github.
 
 ## 3. Development Environment
 
@@ -112,7 +70,7 @@ Add here examples and hints of good ways how to code the project. Convert the si
 npm install
 npm start
 
-### 3.3. Access the Application
+### 3.3. Access the Application / Embedding
 
 ### 3.4. Run Tests
 
@@ -127,7 +85,7 @@ Visual Code
 Survey Form https://github.com/a-matta/phz_ps
 Backend https://github.com/martin-holland/phz_ps_backend
 Dashboard https://github.com/martin-holland/ps_phz_dashboard
-e2e tests https://github.com/a-matta/e2e-tests-phz
+e2e tests https://github.com/a-matta/e2ephz
 
 ### 3.7. Databases and Migrations
 
@@ -183,21 +141,12 @@ User can reset database from firebase => Go to Firebase Promoter project and Fir
 ![Screenshot of the application](./Screenshot1.png)
 ![Screenshot of the application](./Screenshot2.png)
 
-### 4.6. Monitoring
-
 ## 5. Operating Manual
 
-### 5.1 Scheduled Jobs
+### 5.1 Manual Processes
 
-### 5.2 Manual Processes
+(Discussion of how to add entries manually into firebase for data testing)
 
 ## 6. Problems
 
 ### 6.1. Environments
-
-### 6.2. Coding
-
-### 6.3. Dependencies
-
-Add here TODO and blockers that you have found related to upgrading to newer versions.
-List the library/framework/service, version, and then the error message.
