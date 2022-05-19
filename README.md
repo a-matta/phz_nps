@@ -103,7 +103,7 @@ where the src is changed to where you are hosting it from eg:
 
 ### 3.4. Run Tests
 
-From repository : https://github.com/a-matta/e2ephz
+Goto repository https://github.com/a-matta/e2ephz & clone
 
 robot -testcasename.robot OR robot example.robot
 
@@ -208,7 +208,9 @@ from the backend repository
 
 ### 4.1. Prerequisites
 
-1. Python3 & pip
+From repository https://github.com/a-matta/e2e-tests-phz, clone and
+
+1. install Python3 & pip
 2. pip install robotframework(5.0)
 3. check robot version - robot --version
 4. Install relevant browser drive and add to PATH. For example webdrivermanager firefox chrome --linkpath /usr/local/bin
@@ -287,7 +289,11 @@ survey_results = {
 
 ## 6. Problems
 
+During testing we had problems in different browsers font looked different in windows machine.
+
 ### 6.1. Environments
+
+During testing we had issue related to cookie while using mobile phone.
 
 ### 6.2 Notable Dependancies:
 
