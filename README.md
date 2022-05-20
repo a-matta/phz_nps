@@ -290,11 +290,14 @@ User can reset database from firebase => Go to Firebase Promoter project and Fir
 User can embed the form onto their website by inserting the following code into their index html.
 
 Inside the head tag:
+
 ```html
 <script defer="defer" src="https://embedtest-mh.netlify.app/main.js"></script>
-<link href="https://embedtest-mh.netlify.app/main.css" rel="stylesheet"/>
+<link href="https://embedtest-mh.netlify.app/main.css" rel="stylesheet" />
 ```
+
 Inside the body tag:
+
 ```html
 <noscript>You need to enable JavaScript to run this app</noscript>
 <div id="promoterscore"></div>
@@ -302,7 +305,7 @@ Inside the body tag:
 
 Once the form has been embedded onto the website, it will appear on the lower part of the page as demonstrated on the [Live Link](https://embedtest-mh.netlify.app/)
 
-Once a user has clicked on a heart to give their score and possibly left some feedback (this is optional), they are able to send it their result. Once a result has been sent a cookie automatically prevents a user from sending another review until 30 days have passed. 
+Once a user has clicked on a heart to give their score and possibly left some feedback (this is optional), they are able to send it their result. Once a result has been sent a cookie automatically prevents a user from sending another review until 30 days have passed.
 
 In order to use this form, the user must create their own firebase account. Once this is done, they must use the config file of their own firebase and replace the config file within this project as well as the dashboard in order to connect the firebase.
 
@@ -339,7 +342,9 @@ survey_results = {
 
 ## 6. Problems
 
-During testing we had problems in different browsers font looked different in windows machine.
+Font: During testing we found that on a windows machine the font would revert to a windows compatible font and so the visual appearance was somewhat different.
+
+Cookie: In the futurewe would like to move to using localstorage as a way of checking if the form has been completed in a previous session or not as we found some issues with security policies on some mobile phones were preventing the cookie from being saved.
 
 ### 6.1. Environments
 
